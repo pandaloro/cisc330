@@ -1,65 +1,113 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flexbox Example</title>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer Science</title>
+  <style>
     body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      font-family: 'Arial', sans-serif;
     }
-    .container {
-        display: flex;
-        align-items: center; /* Align items vertically */
-        max-width: 800px;
-        margin: 0 auto;
+
+    .flex-container {
+      display: flex;
+      width: 100%;
     }
-    .image {
-        flex: 0 0 40%; /* Flex basis for the image */
-        margin-right: 20px; /* Adjust spacing between image and text */
+
+    .flex-column {
+      flex: 1;
+      padding: 20px;
+      
     }
-    .content {
-        flex: 0 0 50%; /* Flex basis for the content */
+    h4 {
+    color: #800000
     }
-    .left-flexbox {
-        flex: 0 0 40%; /* Flex basis for the left flexbox */
-        margin-right: 20px; /* Adjust spacing between flexboxes */
+    .flex-columnmiddle {
+    	background-color: #d3d3d3;
+    padding: 9px;
     }
-    img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-  		float: right;
-  		padding: 10px 0px 10px 20px ;
+    .flexbottom {
+    color: white;
+    background-color: #800000;
+    margin: 5px 0px 0px 0px;
+    padding: 10px;
     }
-    p {
-        text-align: justify;
+	
+    .nav-class {
+      margin-bottom: 20px;
     }
-</style>
+
+    .h1-heading {
+      margin-bottom: 20px;
+    }
+
+    .general-content__block {
+      max-width: 100%;
+    }
+
+    img.float_right {
+      float: right;
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="left-flexbox">
-            <!-- Content for left flexbox -->
-        </div>
-        <div class="content">
-          <div class="image">
-            <img src="https://www.fordham.edu/media/review/content-assets/migrated/images/iStock_000021097427Medium.jpg" width=150>
-        </div>
-            <p>It’s difficult to imagine life without computers when they’re so central to our information-driven global society. But it’s not difficult to imagine the amazing pursuits you’ll be prepared for with a degree in computer science from Fordham’s department of Computer and Information Sciences.</p>
-          <p>
-         		The computer science major emphasizes science and technology, including software design and programming, computer architecture and functions, and the development of an ability to analyze and solve problems in using the computer as a tool. </p>
-          <p>
-            	Get inspired by the classes we offer. Programming. Bioinformatics. Robotics. Video game design. Cyber security. Networking. Database management. Health and medical informatics.
-          </p>
-          <p>
-            You’ll learn more than computer science here. You’ll also study philosophy, theology, history, mathematics, languages, and the performing arts through Fordham’s common core curriculum, the centerpiece of our liberal arts education. We want you to excel in your field—and as a human being.
-          </p>
-        </div>
+  <div class="flex-container">
+    <div class="flex-column">
+      <h4>
+        Majors and Minors
+      </h4>
+      <div class="flex-columnmiddle">
+        <p>
+         Whats Your Passion?
+        </p>
+        <p>
+          Accelerated Degree Programs
+        </p>
+      </div>
+      <div class=flexbottom>
+        <h3>
+          Majors and Minors
+        <h3>
+      </div>
     </div>
+
+    <div class="flex-column">
+      <nav>
+        <ul class="breadcrumb">
+          <li><a href="/">Home</a></li>
+          <li><a href="/admissions-and-aid/">Admissions and Aid</a></li>
+          <li><a href="/undergraduate-admission/">Undergraduate Admission</a></li>
+          <li><a href="/undergraduate-admission/majors-and-minors/">Majors and Minors</a></li>
+          <li><a href="/undergraduate-admission/majors-and-minors/computer-science/">Computer Science</a></li>
+        </ul>
+      </nav>
+
+      
+      <section class="h1-heading">
+        <h1>Computer Science</h1>
+      </section>
+      <section class="general-content sm-margin-divider side-divider">
+        <div class="general-content__block">
+          <p>Degree Options: Major, Minor</p>
+          <p>Locations: Lincoln Center, Rose Hill</p>
+          <p>Visit the <a href="/academics/departments/computer-and-information-science/">Computer and Information Science Department</a></p>
+
+          <p class="body-lead-font">Be the skilled person shaping the future of technology.</p>
+
+          <p>Immerse yourself in a world of programming, bioinformatics, robotics, video game design, cybersecurity, networking, and more.</p>
+
+          <p>Our faculty members are active researchers dedicated to making an impact. Join them in our labs—just bring an open mind, a warm heart, and lots of passion.</p>
+
+          <p>At Fordham, you'll not only learn computer science but also explore philosophy, theology, history, mathematics, languages, and the performing arts through our liberal arts education.</p>
+        </div>
+      </section>
+    </div>
+  </div>
 </body>
 </html>
