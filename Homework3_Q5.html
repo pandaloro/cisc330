@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox Example</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        min-height: 100vh;
+    }
+    .container {
+        display: flex;
+        align-items: center; /* Align items vertically */
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .image {
+        flex: 0 0 40%; /* Flex basis for the image */
+        margin-right: 20px; /* Adjust spacing between image and text */
+    }
+    .content {
+        flex: 0 0 50%; /* Flex basis for the content */
+    }
+    .left-flexbox {
+        flex: 0 0 40%; /* Flex basis for the left flexbox */
+        margin-right: 20px; /* Adjust spacing between flexboxes */
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+  		float: right;
+  		padding: 10px 0px 10px 20px ;
+    }
+    p {
+        text-align: justify;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-flexbox">
+            <!-- Content for left flexbox -->
+        </div>
+        <div class="content">
+          <div class="image">
+            <img src="https://www.fordham.edu/media/review/content-assets/migrated/images/iStock_000021097427Medium.jpg" width=150>
+        </div>
+            <p>It’s difficult to imagine life without computers when they’re so central to our information-driven global society. But it’s not difficult to imagine the amazing pursuits you’ll be prepared for with a degree in computer science from Fordham’s department of Computer and Information Sciences.</p>
+          <p>
+         		The computer science major emphasizes science and technology, including software design and programming, computer architecture and functions, and the development of an ability to analyze and solve problems in using the computer as a tool. </p>
+          <p>
+            	Get inspired by the classes we offer. Programming. Bioinformatics. Robotics. Video game design. Cyber security. Networking. Database management. Health and medical informatics.
+          </p>
+          <p>
+            You’ll learn more than computer science here. You’ll also study philosophy, theology, history, mathematics, languages, and the performing arts through Fordham’s common core curriculum, the centerpiece of our liberal arts education. We want you to excel in your field—and as a human being.
+          </p>
+        </div>
+    </div>
+</body>
+</html>
