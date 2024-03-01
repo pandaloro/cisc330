@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <title>jQuery JSON Server Requests</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+
+  <script>
+  $(document).ready(function() {
+
+      $.get("URL for the given data", function(data) {
+          console.log("GET request success:", data);
+
+        
+          $.post("URL for the given data", data, function(response) {
+              console.log("POST request success:", response);
+          });
+      
+          $.ajax({
+              url: "URL for the given data",
+              type: "PUT",
+              data: JSON.stringify(data),
+              contentType: "application/json",
+              success: function(response) {
+                  console.log("PUT request success:", response);
+              }
+          });
+      });
+  });
+  </script>
+
+  </body>
+</html>
