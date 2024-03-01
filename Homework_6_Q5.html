@@ -1,0 +1,82 @@
+
+<html lang="en">
+  <head>
+    <title>Pokemon Info</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>Pokemon Info</h1>
+    <select id="pokemonList">
+      <option value="">Select a Pokemon</option>
+    </select>
+
+    <div id="pokemonInfo"></div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Fetching data from the Pokemon API to populate the dropdown
+      var pokemonList = document.getElementById("pokemonList");
+      var request = new XMLHttpRequest();
+      request.open('GET', 'https://pokeapi.co/api/v2/pokemon?limit=100', true);
+      request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+          var data = JSON.parse(request.responseText);
+          data.results.forEach(function(pokemon) {
+            var option = document.createElement("option");
+            option.value = pokemon.url;
+            option.textContent = pokemon.name;
+            pokemonList.appendChild(option);
+          });
+        } else {
+         console.error('Error fetching Pokemon list:', request.statusText);
+        }
+        };
+        request.onerror = function() {
+          console.error('Error fetching Pokemon list:', request.statusText);
+        };
+          request.send();
+
+        // Function to fetch and display Pokemon information
+        function displayPokemonInfo(url) {
+          var request = new XMLHttpRequest();
+          request.open('GET', url, true);
+          request.onload = function() {
+            if (request.status >= 200 && request.status < 400) {
+              var data = JSON.parse(request.responseText);
+              var pokemonInfo = document.getElementById("pokemonInfo");
+              pokemonInfo.innerHTML = `
+                <h2>${data.name}</h2>
+                <img src="${data.sprites.front_default}" alt="${data.name}">
+                <p>Height: ${data.height}</p>
+                <p>Weight: ${data.weight}</p>
+                <p>Abilities:</p>
+                <ul>
+                ${data.abilities.map(function(ability) {
+                 return `<li>${ability.ability.name}</li>`;
+                  }).join('')}
+                </ul>
+                `;
+            } else {
+              console.error('Error fetching Pokemon info:', request.statusText);
+            }
+          };
+          request.onerror = function() {
+            console.error('Error fetching Pokemon info:', request.statusText);
+          };
+          request.send();
+        }
+
+        // Event listener for the dropdown change
+        pokemonList.addEventListener("change", function() {
+          var selectedPokemonUrl = this.value;
+           if (selectedPokemonUrl) {
+            displayPokemonInfo(selectedPokemonUrl);
+          } else {
+            document.getElementById("pokemonInfo").innerHTML = '';
+          }
+        });
+      });
+  </script>
+
+  </body>
+</html>
